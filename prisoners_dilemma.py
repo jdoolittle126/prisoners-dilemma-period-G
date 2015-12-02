@@ -18,10 +18,9 @@ CSE Project 1.3.5 Collaborating on a Project
 Draft, Do Not Distribute
 Version 8/23/2013 
 '''
-enemy = []
+
 import random
 def play_round(player1, player2, history1, history2, score1, score2):
-    enemy = [player1, player2]
     '''
     Calls the get_action() function which will get the characters
     'c' or 'b' for collude or betray for each player.
@@ -397,26 +396,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
         if getting_team_name:
             return 'Team Jon'
         else:
-            choices = ['b','c']
-            if 15 in enemy:
-                return 'b'
-            elif 13 in enemy:
-                return 'c'
-            elif 10 in enemy:
-                return 'b'
-            
-            elif len(opponent_history)==0:
-                return random.choice(choices)
-                
-            elif history[-1]=='c':
-                if score >= opponent_score:
-                    choices.append('c')
-                return random.choice(choices)
-            
-            else:
-                if score <= opponent_score:
-                    choices.append('b')
-                return random.choice(choices)
+            return 'b'
 
 
 
